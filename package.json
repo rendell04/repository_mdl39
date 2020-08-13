@@ -1,0 +1,22 @@
+{
+  "name": "smah",
+  "version": "1.0.0",
+  "description": "smah online learning",
+  "main": "index.js",
+  "scripts": {
+    "meta": "meta"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmaa14/smahonline.git"
+  },
+  "author": "espc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmaa14/smahonline/issues"
+  },
+  "homepage": "https://github.com/cmaa14/smahonline#readme",
+  "dependencies": {
+    "meta": "^2.2.13"
+  }
+}
