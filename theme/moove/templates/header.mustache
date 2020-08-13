@@ -1,0 +1,98 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_moove/header
+
+    Page header template
+
+    Example context (json): {}
+}}
+
+{{> theme_moove/accessibilitybar }}
+{{! fixed-top navbar navbar-light navbar-expand-lg moodle-has-zindex }}
+<nav class="fixed-top navbar navbar-light navbar-expand{{^hasdrawertoggle}}-lg{{/hasdrawertoggle}}  bg-light moodle-has-zindex ">
+{{^hasdrawertoggle}}
+<div class="container">
+{{/hasdrawertoggle}}
+
+
+
+    {{#hasdrawertoggle}}
+        <div data-region="drawer-toggle" class="d-inline-block mr-3 drawer-toggle">
+            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="slicon-menu"></i><span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
+        </div>
+    {{/hasdrawertoggle}}
+
+    <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.get_logo }}has-logo{{/ output.get_logo }}{{^ output.get_logo }} d-none d-sm-inline {{/ output.get_logo }}">
+        {{# output.get_logo }}
+            <span class="logo {{#hasdrawertoggle}}d-none{{/hasdrawertoggle}} d-sm-inline">
+                <img src="{{output.get_logo}}" alt="{{sitename}}">
+            </span>
+        {{/ output.get_logo }}
+        {{^ output.get_logo }}
+            <span class="site-name d-none d-md-inline">PRTC</span>
+        {{/ output.get_logo }}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+     {{^hasdrawertoggle}}
+    <div class="navbar-collapse collapse" id="navbarNavDropdown" style="background-color: #f8f9fa;">
+     {{/hasdrawertoggle}}
+        <ul class="navbar-nav custom-menus ml-auto">
+            {{^hasdrawertoggle}}
+                <!-- custom_menu -->
+                {{{ output.custom_menu }}}
+                <!-- manually created dropdown -->
+                <li class="dropdown nav-item">
+                    <a class="dropdown-toggle nav-link" id="drop-down-5ee718a3491f15ee718a34898b2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">
+                        Login
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{{ config.wwwroot }}}/login">User Login</a>
+                            <a class="dropdown-item" href="{{{ config.wwwroot }}}/login/signup.php">Register</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- page_heading_menu -->
+            {{/hasdrawertoggle}}
+            {{{ output.page_heading_menu }}}
+
+        </ul>
+    {{^hasdrawertoggle}}
+    </div>
+     {{/hasdrawertoggle}}
+    <ul class="navbar-nav">
+        <div class="d-none d-lg-block">
+            {{{ output.search_box }}}
+        </div>
+
+        {{{ output.navbar_plugin_output }}}
+             <!--if user has logged out, hide the usermenu-->
+            <div class="hidden-login {{^hasdrawertoggle}}hidden{{/hasdrawertoggle}}">
+            {{{ output.user_menu }}}
+
+        {{^hasdrawertoggle}}
+            </div>
+        {{/hasdrawertoggle}}
+
+    </ul>
+{{^hasdrawertoggle}}
+</div>
+{{/hasdrawertoggle}}
+</nav>

@@ -1,0 +1,114 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_moove/footer
+
+    Footer template
+
+    Example context (json): {}
+}}
+<div id="top-footer" class="header-color-green">
+  <div class="container">
+    <div class="row" id="footer-content-container">
+        <div class="col-md-4 logo">
+           <a href="{{{ config.wwwroot }}}"><img style="width:90%" width="350" id="footer-image-1" src="{{output.get_pix_image_url_base}}/footer.png" alt="Moodle logo"></a>
+        </div>
+        <div class="col-md-3 who">
+           <h3>WHO ARE WE</h3>
+           <p>
+          PRTC has been operating in the industry for more than 40
+          years now and has produced numerous passers and top-notchers over the
+          years.
+          <a href="{{{ config.wwwroot }}}/local/staticpage/view.php?page=About"><u>Read More.</u></a>
+           </p>
+        </div>
+        <div class="col-md-2 navigate">
+          <h3>NAVIGATE</h3>
+          <ul id="navigate-menu">
+              <li >
+                  <a href="{{{ config.wwwroot }}}" >Team PRTC</a>
+              </li>
+                <li>
+                  <a href="{{{ config.wwwroot }}}/local/staticpage/view.php?page=About" >About Us</a>
+              </li>
+                <li>
+                  <a href="{{{ config.wwwroot }}}/local/staticpage/view.php?page=Faculty" >Faculty</a>
+              </li>
+                <li>
+                  <a href="{{{ config.wwwroot }}}/local/staticpage/view.php?page=Services" >Services</a>
+              </li>
+                <li>
+                  <a href="{{{ config.wwwroot }}}/local/staticpage/view.php?page=Contact" >Contact Us</a>
+              </li>
+          </ul>
+        </div>
+        <div class="col-md-3 where">
+          <h3>WHERE TO FIND US</h3>
+          <ul id="address-list">
+              <li>
+                <i class="fa fa-map-marker icon-large"></i>&nbsp;&nbsp;&nbsp;<p>  2044 CM Recto St., Manila City </p>
+              </li>
+               <li>
+                <i class="fa fa-phone icon-large"></i>&nbsp;&nbsp;&nbsp;<p>Tel No.:(02) 8733 9344</p>
+              </li>
+               <li>
+                <i class="fa fa-mobile icon-large"></i>&nbsp;&nbsp;&nbsp;<p>Globe: (0917) 127 9195</p>
+              </li>
+               <li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="margin-top:-20px"> Smart: (0907) 243 1100</p>
+              </li>
+
+          </ul>
+        </div>
+     
+    </div>
+    <div class="row mx-auto" id="social-icon-container" >
+      <ul id="social-icons">
+        <li>
+          <i class="fa fa-instagram icon-large"></i> 
+        </i>
+          <li>
+          <i class="fa fa-twitter icon-large"></i> 
+        </i>
+          <li>
+          <i class="fa fa-facebook icon-large"></i> 
+        </i>
+          <li>
+          <i class="fa fa-globe icon-large"></i> 
+        </i>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{^disablebottomfooter}}
+  <footer id="page-footer" class="p-y-1">
+      <div class="container-fluid">
+        
+          <div class="madeby">
+              <p>
+                <i class="fa fa-registered"></i> Copyrights Agents of Value 2020<span class="cop-separator">  |  </span>                
+                All Rights Reserved<span class="cop-separator">  |  </span>
+                Terms & Conditions <span class="cop-separator">  |  </span>
+                Privacy Policy
+              </p>
+          </div>
+      </div>
+  </footer>
+{{/disablebottomfooter}}
+
+{{{ output.standard_end_of_body_html }}}
